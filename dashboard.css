@@ -93,3 +93,80 @@ body {
     height: 27px;
     width: 27px;
 }
+
+.contact{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    height: 100px;
+    border: 1px solid #E5E5E5;
+}
+
+.activeContact{
+    background-color: #3C49DD;
+    width: 7px;
+    height: 100%;
+}
+
+.contactImageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    margin: 0 15px 0 15px;
+}
+
+.contactImage{
+    height: 50px;
+    width: 50px;
+}
+
+.contactName{
+    font-family: DM Sans, serif;
+    font-weight: 500;
+    color: black;
+    margin-right: 20px;
+}
+
+.contactsInfo {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.deleteContactContainer{
+    margin: 16px;
+}
+
+.chatContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.contactImageMessage{
+    display: flex;
+    margin: 4px;
+}
+
+.contactImageAvatar{
+    height: 30px;
+    width: 30px;
+}
+
+.contactImageMessage{
+
+}
+
+.textMessageContainer{
+    background-color: #E5E5E5;
+    border-radius: 20px;
+    padding: 18px;
+    margin: 30px;
+}
+
+.textMessageRecieved{
+    margin: 0;
+}
