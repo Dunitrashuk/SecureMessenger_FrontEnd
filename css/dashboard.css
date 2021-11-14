@@ -70,7 +70,7 @@ body {
 
 
 .contactsContainer {
-    height: 70%;
+    height: 80%;
     width: inherit;
     overflow-y: scroll;
 }
@@ -152,12 +152,18 @@ body {
     margin: 16px;
 }
 
+.deleteContactIcon {
+    height: 20px;
+    width: 20px;
+}
+
 .logOutContainer {
     display: flex;
     align-items: center;
     place-content: end;
     height: 10%;
     width: inherit;
+    margin-top: auto;
 
 }
 
@@ -204,11 +210,12 @@ body {
     justify-content: space-around;
     width: inherit;
     margin-top: auto;
-    padding: 10px;
+    padding: 15px;
 }
 
 #messageInput {
     width: 90%;
+    height: 25px;
     padding: 3px;
     border-radius: 5px;
     border-style: none;
@@ -217,10 +224,15 @@ body {
     background: #e0e1ee;
 }
 
+#messageInput:focus {
+    outline-style: double;
+    outline-color: #3C49DD;
+}
+
 #sendMessageButton {
-    height: 24px;
+    height: 25px;
     width: 20px;
-    padding: 5px;
+    padding: 8px;
 }
 
 .receivedMessage {
