@@ -75,6 +75,10 @@ body {
     overflow-y: scroll;
 }
 
+.contactsContainer::-webkit-scrollbar {
+    display: none;
+}
+
 #addUserInput {
     height: 60%;
     width: 70%;
@@ -178,6 +182,10 @@ body {
     overflow-y: scroll;
     height: available;
     padding: 10px;
+}
+
+#messagesContainer::-webkit-scrollbar {
+    display: none;
 }
 
 .contactImageMessage{
