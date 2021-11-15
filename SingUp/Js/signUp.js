@@ -10,10 +10,7 @@ function Validate() {
     const $result = $("#emailResult");
     const email = $("#emailInput").val();
     $result.text("");
-    if (validateEmail(email)) {
-        $result.text("");
-    }
-    else {
+    if (!validateEmail(email)) {
         $result.text("Invalid email format");
         $result.css("color", "red");
     }
@@ -25,18 +22,31 @@ function Validate() {
     const $userResult = $("#usernameResult");
     $userResult.text("");
 
-    if(usernamepattern.test(username))
-    {
-        $userResult.text("")
-    }
-    else
+    if(!usernamepattern.test(username))
     {
         $userResult.text("Name is Invalid");
         $userResult.css("color", "red");
     }
 
     /*Password Validation*/
-    
+    const password = $('#passwordInput').val();
+    const $passwordResult = $("#passwordResult")
+    $passwordResult.text("");
+
+    if(password.length < 7){
+        $passwordResult.text("Minim 7 characters");
+        $passwordResult.css("color", "red");
+    }
+    if(password.length > 25){
+        $passwordResult.text("Maxim 25 characters");
+        $passwordResult.css("color", "red");
+    }
+    var upperCaseLetters = /[A-Z]/g;
+    if(!password.value.match(upperCaseLetters)) {
+        $passwordResult.text("At least 1 capital letter");
+        $passwordResult.css("color", "red");
+    }
+
 
 
     return false;
