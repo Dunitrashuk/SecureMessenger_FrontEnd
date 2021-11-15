@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../Css/signUpPage.css">
     <link rel="icon" href="../../Common/images/logo.png" type="image/x-icon">
     <title>Secure Messenger</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../Js/signUp.js"></script>
 </head>
 
 <body class="login_background">
@@ -19,25 +22,27 @@
             <div class="inputContainer">
                 <label class="labelText" for="emailInput">Email</label>
                 <input id="emailInput" type="text" class="clientInput" placeholder="email">
+                <label id="emailResult"></label>
             </div>
 
             <div class="inputContainer">
                 <label class="labelText" for="usernameInput">Username</label>
                 <input id="usernameInput" type="text" class="clientInput" placeholder="username">
+                <label id="usernameResult"></label>
             </div>
 
             <div class="inputContainer">
                 <label class="labelText" for="passwordInput">Password</label>
                 <input id="passwordInput" type="password" class="clientInput" placeholder="password">
+                <label id="passwordResult"></label>
             </div>
         </form>
-        <button class="signInButton">Sign Up</button>
+        <button class="signInButton" onclick="Validate()">Sign Up</button>
 
         <a class="signUpButton" href="../../SignIn/Html/signIn.html">Sign In</a>
     </div>
 
 </body>
 
-<script src="script.js"></script>
 
 </html>
