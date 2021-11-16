@@ -11,43 +11,63 @@ function Validate() {
     const email = $("#emailInput").val();
     $result.text("");
     if (!validateEmail(email)) {
-        $result.text("Invalid email format");
+        $result.text("Error: invalid email format");
         $result.css("color", "red");
     }
 
 
     /*Username Validation*/
-    const username=  $('#usernameInput').val()///get id with value
+    const username=  $('#usernameInput').val();
     const usernamepattern=/^[A-Za-z .]{6,15}$/;////Regular expression
     const $userResult = $("#usernameResult");
     $userResult.text("");
 
     if(!usernamepattern.test(username))
     {
-        $userResult.text("Name is Invalid");
+        $userResult.text("Error: name is invalid");
         $userResult.css("color", "red");
     }
 
     /*Password Validation*/
     const password = $('#passwordInput').val();
+    const passwordConfirm = $('#passwordInputConfirm').val();
     const $passwordResult = $("#passwordResult")
+    const $passwordConfirmResult = $("#passwordConfirmResult");
+    $passwordConfirmResult.text("");
     $passwordResult.text("");
 
     if(password.length < 7){
-        $passwordResult.text("Minim 7 characters");
+        $passwordResult.text("Error: minim 7 characters");
         $passwordResult.css("color", "red");
     }
     if(password.length > 25){
-        $passwordResult.text("Maxim 25 characters");
+        $passwordResult.text("Error: maxim 25 characters");
         $passwordResult.css("color", "red");
     }
-    var upperCaseLetters = /[A-Z]/g;
-    if(!password.value.match(upperCaseLetters)) {
-        $passwordResult.text("At least 1 capital letter");
+    re = /[0-9]/;
+    if(!re.test(password)) {
+        $passwordResult.text("Error: password must contain at least one number (0-9)!");
         $passwordResult.css("color", "red");
+        return false;
+    }
+    re = /[a-z]/;
+    if(!re.test(password)) {
+        $passwordResult.text("Error: password must contain at least one lowercase letter (a-z)!");
+        $passwordResult.css("color", "red");
+        return false;
+    }
+    re = /[A-Z]/;
+    if(!re.test(password)) {
+        $passwordResult.text("Error: password must contain at least one uppercase letter (A-Z)!");
+        $passwordResult.css("color", "red");
+        return false;
     }
 
-
+    if (password != passwordConfirm){
+        $passwordConfirmResult.text("Error: passwords are not the same!");
+        $passwordConfirmResult.css("color", "red");
+        return false;
+    }
 
     return false;
 }
